@@ -6,7 +6,7 @@
       apt: update_cache=yes force_apt_get=yes cache_valid_time=3600
       
     - name: Wait for APT Lock
-      shell:  while fuser /var/lib/dpkg/lock >/dev/null 2>&1; do sleep 5; done;
+      shell:  while fuser /var/lib/dpkg/lock >/dev/null 2>&1; do sleep 10; done;
       
     - name: Upgrade all packages on servers
       apt: upgrade=dist force_apt_get=yes
